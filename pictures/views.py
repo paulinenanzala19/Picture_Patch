@@ -10,3 +10,6 @@ def home(request):
 
     return render(request,'index.html',{'images':images,'location':location,'category':category,'title':title})
 
+def image_location(request,location):
+    images=Image.filter_by_location(location)
+    return render(request, 'location.html', {'image_location': images})

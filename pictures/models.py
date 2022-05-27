@@ -16,6 +16,16 @@ class Image(models.Model):
     class Meta:
         ordering = ['description']
 
+    @classmethod
+    def display_location(cls,name):
+        location = cls.objects.filter(location=name)
+        return location
+
+    @classmethod
+    def display_category(cls,cate):
+        category=clas.ogjects.filter(category=cate)
+        return category
+
 class Location(models.Model):
     name = models.CharField(max_length=60)
 
