@@ -2,9 +2,12 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
-    image=models.ImageField(upload_to = 'articles/', unique=True, null=True)
+    image=models.ImageField(upload_to = 'images/', unique=True, null=True)
     title = models.CharField(max_length=100)
     description = models.TextField()
+    category = models.ForeignKey('Category',on_delete=models.CASCADE) 
+    location = models.ForeignKey('Location',on_delete=models.CASCADE,default=1) 
+
 
     def __str__(self):
         return self.title
