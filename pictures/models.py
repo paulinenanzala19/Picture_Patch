@@ -25,6 +25,13 @@ class Image(models.Model):
     def display_category(cls,cate):
         category=clas.ogjects.filter(category=cate)
         return category
+    
+    @classmethod
+    def search_image_cat(cls,category):
+        images = cls.objects.filter(image_cat__icontains=category)
+        return images
+
+
 
 class Location(models.Model):
     name = models.CharField(max_length=60)
