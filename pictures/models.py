@@ -17,3 +17,29 @@ class Location(models.Model):
 
     def __str__(self):
        return self.name
+
+
+    def save_location(self):
+        self.save()
+
+    @classmethod
+    def find_location(cls):
+        location=Location.objects.all()
+        return location
+
+class Category(models.Model):
+    name = models.CharField(max_length=60)
+
+    def __str__(self):
+       return self.name
+
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()  
+
+
+    
+
+    
