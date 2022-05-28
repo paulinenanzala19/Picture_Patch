@@ -1,1 +1,12 @@
-{% extends  'base.html'%}
+{% extends 'base.html'%}
+{% block content %}
+{{block.super}}
+<main class="container-fluid mt-2 pt-2">
+    
+    {% include "picture.html" %}
+
+    
+</main>
+
+
+{% endblock %}

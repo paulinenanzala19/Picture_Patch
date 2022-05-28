@@ -1,15 +1,16 @@
 from django.http  import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 
 # Create your views here.
 def home(request):
-    title='Zoomin'
+    # title='Zoomin'
     images=Image.objects.all()
-    location=Location.objects.all()
-    category=Category.objects.all()
+    # location=Location.objects.all()
+    # category=Category.objects.all()
 
-    return render(request,'index.html',{'images':images,'location':location,'category':category,'title':title})
+    return render(request, 'index.html',{'images':images})
+    # 'location':location,'category':category,'title':title})
 
 def image_location(request,location):
     images=Image.filter_by_location(location)

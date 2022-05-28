@@ -5,17 +5,29 @@
 <head>
   <meta charset="utf-8">
 
-  
+  {% if title %}
+  <title>zoomin' - {{title}}</title>
+  {% else %}
+    <title>zoomin'</title>
+  {% endif %}
 
   {% block styles %}
     {% bootstrap_css %}
-   
+    
   {% endblock %}
 
 </head>
 <body>
-    {% include "navbar.html" %}
+    
+        {% include "navbar.html" %}
 
+
+    
+        {% block content %}
+       
+        {% endblock %}
+
+    
     
 
     {% block scripts %}
@@ -23,4 +35,8 @@
      {% bootstrap_javascript %}
     {% endblock %}
 </body>
-</html>
+</html
+
+
+
+    
