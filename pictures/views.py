@@ -1,12 +1,13 @@
 from django.http  import HttpResponse
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def home(request):
     title='Zoomin'
-    images=Images.object.all()
-    location=Location.object.all()
-    category=Category.object.all()
+    images=Image.objects.all()
+    location=Location.objects.all()
+    category=Category.objects.all()
 
     return render(request,'index.html',{'images':images,'location':location,'category':category,'title':title})
 
@@ -16,8 +17,8 @@ def image_location(request,location):
 
 def search_results(request):
 
-    if 'search' in request.GET and request.GET["search"]:
-        category = request.GET.get("search")
+    if 'image' in request.GET and request.GET["image"]:
+        category = request.GET.get("image")
         searched_images = Image.search_image_cat(category)
         message = f"{category}"
 

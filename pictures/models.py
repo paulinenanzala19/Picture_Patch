@@ -23,7 +23,7 @@ class Image(models.Model):
 
     @classmethod
     def display_category(cls,cate):
-        category=clas.ogjects.filter(category=cate)
+        category=cls.ogjects.filter(category=cate)
         return category
     
     @classmethod
