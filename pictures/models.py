@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
-    images=models.ImageField(upload_to = 'images/', default='no image')
+    image=models.ImageField(upload_to = 'images/', default='no image')
     title = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True,auto_now=False)
@@ -19,6 +19,11 @@ class Image(models.Model):
         ordering = ['description']
 
     @classmethod
+    def get_image(cls, id):
+        image = cls.objects.filter(id=id).all()
+        return image
+
+    @classmethod
     def display_location(cls,name):
         location = cls.objects.filter(location=name)
         return location
@@ -29,20 +34,22 @@ class Image(models.Model):
         return categorys
     
     @classmethod
-    def search_image_cat(cls,search_term):
-        images = cls.objects.filter(category__name__icontains=search_term)
-        return images
+    def search_by_category(cls,search_term):
+        image = cls.objects.filter(category__title__icontains=search_term)
+        return image
 
+    def __str__(self):
+        return self.title
 
     
 class Location(models.Model):
-    name = models.CharField(max_length=60)
+    title = models.CharField(max_length=60)
 
     def __str__(self):
-       return self.name
+       return self.title
 
 
-    def save_location(self):
+    def save_title(self):
         self.save()
 
     @classmethod
@@ -51,16 +58,17 @@ class Location(models.Model):
         return location
 
 class Category(models.Model):
-    name = models.CharField(max_length=60)
+    title = models.CharField(max_length=60)
 
-    def __str__(self):
-       return self.name
 
-    def save_category(self):
+    def save_title(self):
         self.save()
 
-    def delete_category(self):
-        self.delete()  
+    def delete_title(self):
+        self.delete() 
+
+    def __str__(self):
+       return self.title 
 
 
     
