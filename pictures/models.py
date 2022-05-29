@@ -15,6 +15,9 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
+    def delete_image(self):
+        self.delete()
+
     class Meta:
         ordering = ['description']
 
@@ -51,11 +54,18 @@ class Location(models.Model):
 
     def save_title(self):
         self.save()
+    
+    def delete_title(self):
+        self.delete() 
 
     @classmethod
     def find_location(cls):
         location=Location.objects.all()
         return location
+
+    @classmethod
+    def update_location(cls,id,value):
+        cls.objects.filter(id=id).update(title=value)
 
 class Category(models.Model):
     title = models.CharField(max_length=60)
