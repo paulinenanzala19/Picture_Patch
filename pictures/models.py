@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Image(models.Model):
-    image=models.ImageField(upload_to = 'images/', default='no image')
+    images=models.ImageField(upload_to = 'images/', default='no image')
     title = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True,auto_now=False)
@@ -25,16 +25,16 @@ class Image(models.Model):
 
     @classmethod
     def display_category(cls,cate):
-        category=cls.ogjects.filter(category=cate)
-        return category
+        categorys=cls.objects.filter(categorys=cate)
+        return categorys
     
     @classmethod
-    def search_image_cat(cls,category):
-        images = cls.objects.filter(image_cat__icontains=category)
+    def search_image_cat(cls,search_term):
+        images = cls.objects.filter(category__name__icontains=search_term)
         return images
 
 
-
+    
 class Location(models.Model):
     name = models.CharField(max_length=60)
 

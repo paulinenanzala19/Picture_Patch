@@ -1,25 +1,82 @@
 {%extends 'base.html'%} 
+
 {% block content %}
 <div class="container">
 
-  <div class="row">
-    {% if images%}
-      <h2>Found {{ images|length }}images in {{message}} category</h2>
-    {% else %}
-      <h2> Found 0 images for the search {{message}}</h2>
+    <div class='row'>
+        {% if images %}
+
+        <h2 class="jumbotron text-center "><strong>Found {{images|length}}
+                of searched term {{message}}</strong> </h2>
+        {%else%}
+        <h2 class="jumbotron text-center"><strong>Found 0 images for the
+          search term {{message}}</strong> </h2>
+
+        {%endif%}
+
+    </div>
+    {% if images %}
+    {% for image in images %}
+    <div class="col-md-3">
+
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <a href="" data-toggle="modal" data-target="#staticBackdrop{{images.id}}">
+                <img src="{{image.images.url}}" class="img-responsive styled" alt="cant show">
+              </a>
+          </div>
+            
+        </div>
+
+        <div class="modal fade" id="staticBackdrop{{image.id}}" data-backdrop="static" data-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h3 class="modal-title" id="staticBackdropLabel text-center">{{image}}</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+
+                      <img src="{{image.images.url}}" class="img-responsive" alt="cant show">
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="col-md-6">
+                          <p><b>Description:</b> {{image.description}}</p>
+                        </div>
+
+                        <div class="col-md-6">
+                          <p><b>Location</b> {{image.location}}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer row">
+                        <div class="col-md-8">
+                            <input type="text" value="https://perisgallery.herokuapp.com/media/{{photos.id}}" id="myInput">
+                            <button type="button" class="btn btn-info" onclick="myFunction()">Copy Link</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
     {% endif %}
 
-  </div>
-
-  <div class="row">
-
-  {% if images %}
-    {% for image in images %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{image.title}}</h1>
-      </div>
-    {% endfor %}
-  {% endif %}
-  </div>
 </div>
+
+</div>
+
 {% endblock %}
