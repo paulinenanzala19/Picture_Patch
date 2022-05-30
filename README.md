@@ -33,29 +33,33 @@ As a user I would like to:
 ### Cloning
 * In your terminal:
 
-  $ git clone https://github.com/paulinenanzala19/Picture_Patch.git
-  $ cd gallery
+
+        $ git clone https://github.com/paulinenanzala19/Picture_Patch.git
+        $ cd gallery
+
 ## Running the Application
 * Creating the virtual environment
 
-  $ python3.8 -m venv --without-pip virtual
-  $ source virtual/bin/activate
-  $ curl https://bootstrap.pypa.io/get-pip.py | python
+        $ python3.8 -m venv --without-pip virtual
+        $ source virtual/bin/activate
+        $ curl https://bootstrap.pypa.io/get-pip.py | python
 
 * Installing Django and other Modules
 
-  $ python3.8  pip install django
-  $ python3.8  pip install django-bootstrap3
-  $ python3.8  pip install pillow
-  
+        $ python3.8  pip install django
+        $ python3.8  pip install django-bootstrap3
+        $ python3.8  pip install pillow
+        
+
 * To run the application, in your terminal:
 
-  $ python3.8 manage.py runserver
+        $ python3.8 manage.py runserver
+       
    
 ## Testing the Application
 To run the tests for the class files:
 
-  $ python3.8 manage.py test pictures
+        $ python3.8 manage.py test pictures
 
 ## Technologies Used
 * Python3.8
