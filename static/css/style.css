@@ -8,12 +8,14 @@ header{
     
 }
 body{
-    background-color: bisque;
-    
+    background-color: bisque;  
 }
 .zoom{
     text-align: center;
     color: #A1045A;
+}
+#patch{
+    font-size: 50px;
 }
 
 
