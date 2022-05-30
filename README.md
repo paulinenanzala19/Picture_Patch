@@ -4,7 +4,7 @@ Making memories is always on the to do list.Picture patch has it all in every as
 ## Author
 Pauline Wafula
 
-### Description
+## Description
 Picture Patch is a web application that showcases a user's gallery.This is through showing images in different categories and location. On clicking on an image, it is able to take you to a bigger image with description, category and location.A new user can also search an image using category. They can also copy and paste the link of the image.
 
 ## User Stories
@@ -17,19 +17,20 @@ As a user I would like to:
 * Search for different categories
 * Copy the images link
 
-# Specifications
-Behaviour |	Input |	Output
-Display images posted by other users |	**On page load** |	Display images of various categories
-Display images |	**On clicking a 'search' button**	| Displays images under the searched
-Displays description, location and category | **on clicking a photo** | Expanded version of the photo |
-Copy link | **on clicking a 'copy link' button** | link copied
+## Specifications
+| Behaviour | Input | Output |
+| :---------------- | :---------------: | ------------------: |
+| Display images posted by other users  | **On page load** | Display images of various categories |
+| Display images  | **On clicking a 'search' button** | Displays images under the searched category |
+| Display description, location and category | **Click a photo** |  Expanded version of the photo with description,location and category|
+| Copy link | **On clicking copy link button** | link copied|
 
 ## SetUp / Installation Requirements
-# Prerequisites
-python3.8
-pip
-activate virtual environment
-## Cloning
+### Prerequisites
+* python3.8
+* pip
+* activate virtual environment
+### Cloning
 * In your terminal:
 
   $ git clone https://github.com/paulinenanzala19/Picture_Patch.git
@@ -51,17 +52,18 @@ activate virtual environment
 
   $ python3.8 manage.py runserver
    
-# Testing the Application
+## Testing the Application
 To run the tests for the class files:
 
   $ python3.8 manage.py test pictures
 
-# Technologies Used
+## Technologies Used
 * Python3.8
 * Django
 * HTML
 * CSS(Bootstrap)
-* live link
+
+## live link
 ['']
 
 ## known bugs
