@@ -21,7 +21,7 @@ def search_category(request):
         return render(request,'search.html',{"message":message,"image":searched_images})
 
     else:
-        message = "You haven't searched for Image Category"
+        message = "You haven't searched for any Image Category"
         return render(request,'search.html',{"message":message})
 
     # if 'images' in request.GET and request.GET["images"]:

@@ -29,7 +29,7 @@
                                 <p><b>Description:</b> {{image.description}}</p>
                             </div>
                             <div class="col-md-4">
-                                <p><b>Location:</b> {{image.location}}</p>
+                                <p><b><i class="fas fa-map-marker-alt"></i>&nbsp;</b> {{image.location}}</p>
                             </div>
                             <div class="col-md-4">
                                 <p><b>category:</b> {{image.category}}</p>
@@ -38,8 +38,8 @@
                         <div class="modal-footer row">
                             <div class="col-md-8">
                                 <input type="text"
-                                    id="myInput">
-                                <button class="btn btn-info" onclick="myFunction()">Copy Link</button>
+                                    id="myInput" value="https://nanzalapatch.herokuapp.com{{image.image.url}}">
+                                <button class="btn btn-info"  onclick="share(this.value)">Copy Link</button>
                             </div>
                             <div class="col-md-4">
                                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
@@ -53,6 +53,15 @@
     </div>
 </div>
 </div>
+<script>
+   function share(){
+  $("#copy-url").select()
+  document.execCommand('copy');
+  alert("Link copied to your clipboard")
+}
+
+</script>
+
 
 
 

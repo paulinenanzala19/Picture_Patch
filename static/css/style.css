@@ -5,17 +5,21 @@ header{
     background-position: center;
     background-repeat: no-repeat;
    
-    
 }
+
 body{
-    background-color: bisque;  
+    background-color:bisque;
+    font-family: 'Playfair Display', serif;  
 }
 .zoom{
     text-align: center;
     color: #A1045A;
+    font-family: 'Playfair Display', serif;
 }
 #patch{
     font-size: 50px;
+    margin-top: 4%;
+    color: #A1045A;
 }
 
 

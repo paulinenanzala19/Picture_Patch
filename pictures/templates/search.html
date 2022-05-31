@@ -46,7 +46,7 @@
                                 <p><b>Description:</b> {{images.description}}</p>
                             </div>
                             <div class="col-md-4">
-                                <p><b>Location:</b> {{images.location}}</p>
+                                <p><b><i class="fas fa-map-marker-alt"></i>&nbsp;</b> {{images.location}}</p>
                             </div>
                             <div class="col-md-4">
                                 <p><b>category:</b> {{images.category}}</p>
@@ -55,8 +55,8 @@
                         <div class="modal-footer row">
                             <div class="col-md-8">
                                 <input type="text"
-                                    id="myInput">
-                                <button class="btn btn-info" onclick="myFunction()">Copy Link</button>
+                                    id="myInput" value="https://nanzalapatch.herokuapp.com/media/{{images.image.url}}">
+                                <button class="btn btn-info" onclick="link(copy)">Copy Link</button>
                             </div>
                             <div class="col-md-4">
                                 <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>

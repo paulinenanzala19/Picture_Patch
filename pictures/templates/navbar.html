@@ -7,10 +7,12 @@
     <title>Zoomin'</title>
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" style="background-color:rgba(255, 255, 255, .15); border:none; position: fixed; top:0; height: 25px;margin-bottom: 2%; width: 100%; box-shadow: 8px; backdrop-filter: blur(8px); z-index: 1;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" style="color:#A1045A ; font-size:30px;" href="{% url 'home' %}">Picture Patch</a>
+        <a class="navbar-brand" style="color:#A1045A ; font-size:30px;" href="{% url 'home' %}">PicturePatch</a>
+        <a class="navbar-brand" style="color:#A1045A ; font-size:25px;" href="{% url 'home' %}">Home</a>
+        <a class="navbar-brand" style="color:#A1045A ; font-size:25px;" href="admin/">Admin Dashboard</a>
       </div>
       
       <!-- Adding a search form  -->
